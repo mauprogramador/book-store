@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  bookstoremysql:
+    image: mysql:latest
+    container_name: bookstoremysql
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: bookstore
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./MySQL:/var/lib/mysql

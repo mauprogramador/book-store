@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Remover Livro</h1>
+<div mat-dialog-content>
+  <table>
+    <tr>
+      <th scope="row">Nome:</th>
+      <td>{{ data[1] }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Autor:</th>
+      <td>{{ data[2] }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Preço:</th>
+      <td>{{ data[3] }}</td>
+    </tr>
+  </table>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="closeDialog()" color="primary">Cancelar</button>
+  <button mat-button (click)="removeUser()" cdkFocusInitial>Remover</button>
+</div>

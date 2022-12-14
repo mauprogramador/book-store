@@ -1,0 +1,57 @@
+<!-- cSpell:disable -->
+
+<main>
+  <header>
+    <div class="header-item">
+      <h1>Livros</h1>
+      <button mat-raised-button (click)="showCreateDialog()">Cadastrar</button>
+      <button mat-raised-button routerLink="/">Voltar</button>
+    </div>
+    <div class="header-item">
+      Total: {{ totalProducts }}
+    </div>
+  </header>
+
+
+  <mat-form-field appearance="standard">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+  </mat-form-field>
+
+
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort aria-label="books-table">
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Nome</th>
+        <td mat-cell *matCellDef="let book">{{ book.name }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="author">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Autor</th>
+        <td mat-cell *matCellDef="let book">{{ book.author }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Preço</th>
+        <td mat-cell *matCellDef="let book">{{ book.price }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>abc</th>
+        <td mat-cell *matCellDef="let book">
+          <mat-icon aria-hidden="false" aria-label="delete-icon" fontIcon="delete" class="delete-icon" (click)="showRemoveDialog(book)"></mat-icon>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let book; columns: displayedColumns;"></tr>
+
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{ input.value }}"</td>
+      </tr>
+    </table>
+
+    <mat-paginator [pageSize]="10" [pageSizeOptions]="[5,10,25,50]" aria-label="Select page of users"></mat-paginator>
+  </div>
+</main>
