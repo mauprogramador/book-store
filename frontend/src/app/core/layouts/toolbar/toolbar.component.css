@@ -1,3 +1,24 @@
 mat-toolbar {
-    background: linear-gradient(90deg,#f87912 0,#f5af19) !important;
+    margin: 30px 50px;
+    padding: 0px 70px;
+    width: auto !important;;
+    background-color: #f87912;
+    justify-content: space-between;
+    color: #fff;
+    align-items: center;
+}
+span {
+    display: flex;
+}
+mat-icon {
+    font-size: 35px;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+mat-icon + mat-icon {
+    margin-left: 20px;
+}
+mat-icon:hover {
+    color: #3f51b5;
 }

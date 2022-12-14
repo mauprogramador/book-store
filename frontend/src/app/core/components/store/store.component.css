@@ -1,0 +1,16 @@
+main {
+    margin: 0px auto 50px auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+mat-card {
+  max-width: 300px;
+  border-radius: 10px;
+}
+mat-card-actions {
+    display: flex;
+    justify-self: center;
+}
